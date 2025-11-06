@@ -1,0 +1,239 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+:root {
+    --bg1: #0b0b0d;
+    --bg2: #141418;
+    --text: #eaeaf0;
+    --muted: #b7b7c2;
+    --card: rgba(255, 255, 255, 0.06);
+    --card-border: rgba(255, 255, 255, 0.18);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    --radius: 18px;
+    --focus: rgba(140, 180, 255, 0.45);
+}
+
+.page {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    /* I made all gradient using https://cssgradient.io/ */
+    background: radial-gradient(1200px 700px at 20% 10%, #1a1a22 0%, var(--bg1) 45%, #000 100%);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    width: 760px;
+    max-width: 92vw;
+    padding: 28px 28px 24px;
+    border-radius: var(--radius);
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(14px) saturate(120%);
+    box-shadow: var(--shadow);
+}
+
+.title {
+    margin: 0 0 10px;
+    font-weight: 700;
+    font-size: 26px;
+    letter-spacing: 0.2px;
+}
+
+.section-title {
+    margin: 18px 0 10px;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--muted);
+}
+
+.rate-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    margin: 10px 0 20px;
+}
+
+.rate-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.rate-label {
+    font-size: 13px;
+    opacity: 0.7;
+    margin-bottom: 4px;
+}
+
+.rate-value {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.rate-input {
+    width: 100%;
+    text-align: center;
+}
+
+.hint {
+    font-size: 11px;
+    margin-top: 4px;
+    color: #ffb3b3;
+    opacity: 0.9;
+}
+
+.input, .select {
+    border: 1px solid rgba(255,255,255,0.18);
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+    padding: 10px 12px;
+    border-radius: 12px;
+    outline: none;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+    font-size: 14px;
+}
+
+.input::placeholder {
+    color: rgba(234,234,240,0.45);
+}
+
+.input:focus, .select:focus {
+    box-shadow: 0 0 0 6px var(--focus);
+    border-color: rgba(160,190,255,0.6);
+    background: rgba(255,255,255,0.09);
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.grow {
+    flex: 1 1 auto;
+}
+
+.result {
+    margin-top: 14px;
+    padding: 12px 14px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35) inset;
+}
+
+.hint {
+    font-size: 12px;
+    color: #ffb3b3;
+    opacity: 0.9;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 14px;
+    padding: 20px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35) inset;
+}
+
+.result-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.result-amount {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.result-currency {
+    font-size: 13px;
+    opacity: 0.5;
+    margin-top: 2px;
+}
+
+.result-equal {
+    font-size: 30px;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+
+.table-result {
+    margin-top: 18px;
+    border-radius: 14px;
+    overflow: hidden; /* rounds the table corners */
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow);
+}
+
+.glass-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    border-radius: var(--radius);
+    border: solid 1px rgba(255, 255, 255, 0.18);
+}
+
+.glass-table thead th {
+    text-align: left;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--muted);
+    padding: 12px 14px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+}
+
+.glass-table tbody td {
+    padding: 12px 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text);
+}
+
+.glass-table tbody tr:nth-child(even) { /* 1 raw one color, 1 raw another color (like in excel)) */
+    background: rgba(255, 255, 255, 0.03);
+}
+.glass-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.glass-table .num {
+    text-align: right; /* like in excel, better visibiolity for the number, I find */
+}
+
+.glass-table .empty {
+    text-align: center;
+    padding: 16px;
+    color: var(--muted);
+}
+
+button {
+    width: 100%;
+    padding: 12px 0;
+    margin: 18px 0;
+    background: #cccccc;
+    color: #000000;
+    border-radius: var(--radius);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
