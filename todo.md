@@ -1,5 +1,3 @@
-- no time to perform UI cool style / animation 
-- no time to finish point 8 and 9
-- I don't know what it means "expose the application in Github page .io" ? 
-
-```
+## Todo 
+N/A : All instruction have been done. Please see roadme.md 
+for more information about interesting features to add.
